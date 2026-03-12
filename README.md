@@ -1,0 +1,43 @@
+// 
+public class Address {
+ private String street;
+ private String city;
+
+ public Address(String street, String city) {
+ this.Street = street;
+ this.City = city;
+}
+
+ public String getStreet() {return street;}
+ public String getCity() {return city;}
+
+ // 
+ public void setStreet(String street) {this.Street = street;}
+ public void setCity(String city) {this.City = city;}
+}
+
+// 
+public final class Person {
+ //
+ private final Address address;
+ private final String name;
+ private final int age;
+
+ // 
+ public Person(String name, int age, Address address) {
+ this.Name = name;
+ this.Age = age;
+ this.Address = address; // 
+}
+
+ // 
+ public String getName() {return name;}
+ public int getAge() {return age;}
+ public Address getAddress() {return address;}
+
+ // 
+ public Person withNewAddress(String street, String city) {
+ Address newAddress = new Address(street, city);
+ return new Person(this.Name, this.Age, newAddress);
+}
+}
